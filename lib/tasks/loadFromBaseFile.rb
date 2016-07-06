@@ -54,7 +54,7 @@ if File.exist?(filepath)
     if sa.size < 0
       sa.each_with_index do |p, ii|
         sp = p.split(/\(/) #.map{|pp| pp}
-        pp ["SampleAlias",sp]
+        #pp ["SampleAlias",sp]
         SampleAlias.create({sample: s, name: sp[0], typeCast: sp[1].gsub!(/\)/,'')})
       end
     end
@@ -63,7 +63,7 @@ if File.exist?(filepath)
     pti = rr[12].split(/,/)
     pti.each_with_index do |p, ii|
       sp = p.split(/\(/) #.map{|pp| pp.gsub!(/\)/,'')}
-      pp ["PatientNames",sp]
+      #pp ["PatientNames",sp]
       newSampAlias = SampleAlias.create({sample: s, name: sp[0], typeCast: sp[1].gsub!(/\)/,'')})
 
       if ii == 0
@@ -116,11 +116,11 @@ if File.exist?(filepath)
     a.save!
 
 
-    if idx > 40
+    #if idx > 40
 
-      exit
+#      exit
 
-    end
+#    end
 
 
 
