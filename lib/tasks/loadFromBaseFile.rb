@@ -17,10 +17,12 @@ if File.exist?(filepath)
       next
     end
 
+    next if rr[0].empty?
 
     s=Sample.create({study_name:stdy,rlims_id:rr[0],family_id:rr[1],sample_type:rr[3],patient_initials:rr[13],
                      full_name:rr[14],visit_description:rr[18],tissue_tumor_flag:rr[27],tissue_normal_flag:rr[28],tissue_abnormal_flag:rr[29] })
 
+    pp [idx,rr[1..4]]
     if !rr[4].empty?
       s.treatments = rr[4]
     end
@@ -60,11 +62,16 @@ if File.exist?(filepath)
     end
 
 
-    pti = rr[12].split(/,/)
+    pti = rr[12].gsub('"','').split(/,/)
     pti.each_with_index do |p, ii|
       sp = p.split(/\(/) #.map{|pp| pp.gsub!(/\)/,'')}
       #pp ["PatientNames",sp]
-      newSampAlias = SampleAlias.create({sample: s, name: sp[0], typeCast: sp[1].gsub!(/\)/,'')})
+      typeName="Unknown"
+      if !sp[1].nil?
+        typeName = sp[1].gsub!(/\)/,'')
+      end
+
+      newSampAlias = SampleAlias.create({sample: s, name: sp[0], typeCast: typeName})
 
       if ii == 0
         newSampAlias.top = true
