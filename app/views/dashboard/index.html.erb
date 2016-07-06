@@ -1,0 +1,39 @@
+
+<fieldset>
+    <div class="row">
+        <div class="col-xs-2 col-md-1"></div>
+        <div class="col-xs-12 col-md-10">
+            <div class = "btn-group" style="margin-bottom: 8px">
+                <% @studyText.each do |stdy| %>
+                    <!--<button type = "button" class = "btn btn-default"><%#= stdy %></button>-->
+
+                    <%= button_to stdy, {:action => 'list_by_study'}, params: {:study_name => stdy}, :class => "btn btn-info", :method => :get %>
+
+            <%end%>
+            </div>
+
+            <legend>Recent Samples
+
+                <%= form_tag(dashboard_find_sample_path, :class=>'form-horizontal pull-right') do %>
+                    <div class="form-group" >
+                        <div class="col-md-3 pull-right">
+                            <%= submit_tag "Sample", :class=>'btn btn-sm btn-info'%>
+                        </div>
+                        <div class="col-md-7 input-sm pull-right">
+                            <%= text_field_tag 'query'%>
+                        </div>
+                    </div>
+                <% end %>
+            </legend>
+            </br>
+
+            <%= render :partial => 'layouts/sample_list', :locals => {:samples=>@recentSampls, :able=>true} %>
+
+
+
+            <div class="pull-right">Total Samples: <%=Sample.count%> &nbsp;</div>
+        </div>
+    </div>
+<fieldset>
+
+

@@ -1,0 +1,85 @@
+<%= form_for(@sample) do |f| %>
+  <% if @sample.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sample.errors.count, "error") %> prohibited this sample from being saved:</h2>
+
+      <ul>
+      <% @sample.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :study_name %><br>
+    <%= f.text_field :study_name %>
+  </div>
+  <div class="field">
+    <%= f.label :rlims_id %><br>
+    <%= f.text_field :rlims_id %>
+  </div>
+  <div class="field">
+    <%= f.label :family_id %><br>
+    <%= f.text_field :family_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sample_type %><br>
+    <%= f.text_field :sample_type %>
+  </div>
+  <div class="field">
+    <%= f.label :treatments %><br>
+    <%= f.text_field :treatments %>
+  </div>
+  <div class="field">
+    <%= f.label :preparation %><br>
+    <%= f.text_field :preparation %>
+  </div>
+  <div class="field">
+    <%= f.label :patient_initials %><br>
+    <%= f.text_field :patient_initials %>
+  </div>
+  <div class="field">
+    <%= f.label :full_name %><br>
+    <%= f.text_field :full_name %>
+  </div>
+  <div class="field">
+    <%= f.label :birth_date %><br>
+    <%= f.date_select :birth_date %>
+  </div>
+  <div class="field">
+    <%= f.label :collection_date %><br>
+    <%= f.datetime_select :collection_date %>
+  </div>
+  <div class="field">
+    <%= f.label :create_date %><br>
+    <%= f.datetime_select :create_date %>
+  </div>
+  <div class="field">
+    <%= f.label :visit_description %><br>
+    <%= f.text_field :visit_description %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :tissue_tumor_flag %><br>
+    <%= f.text_field :tissue_tumor_flag %>
+  </div>
+  <div class="field">
+    <%= f.label :tissue_normal_flag %><br>
+    <%= f.text_field :tissue_normal_flag %>
+  </div>
+  <div class="field">
+    <%= f.label :tissue_abnormal_flag %><br>
+    <%= f.text_field :tissue_abnormal_flag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

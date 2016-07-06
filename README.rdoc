@@ -1,0 +1,11 @@
+== README
+
+save text from excel
+
+tr '\r' '\n' < /Users/m088378/Desktop/Lazaridis/PSCStudyAccrualReport.txt > /Users/m088378/Desktop/Lazaridis/PSCStudyAccrualReport_02.txt
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+rails g scaffold Sample study_name:string rlims_id:string family_id:string sample_type:string treatments:string preparation:string patient_initials:string full_name:string birth_date:date collection_date:datetime create_date:datetime visit_description:string source:string notes:text tissue_tumor_flag:string tissue_normal_flag:string tissue_abnormal_flag:string --skip

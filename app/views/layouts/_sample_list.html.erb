@@ -1,0 +1,41 @@
+<div class="datagrid"><table>
+    <thead>
+    <tr>
+        <th>Patient Id</th>
+        <th>RLIMS</th>
+        <th width="15px">Study</th>
+        <th>Created</th>
+        <th>Family</th>
+        <th>Type</th>
+        <th>Initals</th>
+        <th>Name</th>
+        <th>Birth</th>
+        <th>Notes</th>
+        <%if able%>
+            <th width="20px">Edit</th>
+        <%end%>
+    </tr>
+    </thead>
+    <tbody>
+
+    <% samples.each do |s| %>
+        <tr class="<%= cycle('alt', 'odd') -%>">
+            <td><%= s.top_name_with_source %></td>
+            <td><%=link_to s.rlims_id, s%></td>
+            <td><em><%= s.study_name %></em></td>
+            <td><%= s.create_date %></td>
+            <td><%= s.family_id %></td>
+            <td><%= s.sample_type %></td>
+            <td><%= s.patient_initials %></td>
+            <td><%= s.full_name %></td>
+            <td><%= s.birth_date %></td>
+            <td><%= s.notes %></td>
+
+            <%if able%>
+                <td><%=link_to 'Edit', edit_sample_path(s), :class => "btn btn-default btn-xs pull-right"%></td>
+            <%end%>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+</div>

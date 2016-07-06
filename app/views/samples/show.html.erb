@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Study name:</strong>
+  <%= @sample.study_name %>
+</p>
+
+<p>
+  <strong>Rlims:</strong>
+  <%= @sample.rlims_id %>
+</p>
+
+<p>
+  <strong>Family:</strong>
+  <%= @sample.family_id %>
+</p>
+
+<p>
+  <strong>Sample type:</strong>
+  <%= @sample.sample_type %>
+</p>
+
+<p>
+  <strong>Treatments:</strong>
+  <%= @sample.treatments %>
+</p>
+
+<p>
+  <strong>Preparation:</strong>
+  <%= @sample.preparation %>
+</p>
+
+<p>
+  <strong>Patient initials:</strong>
+  <%= @sample.patient_initials %>
+</p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @sample.full_name %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @sample.birth_date %>
+</p>
+
+<p>
+  <strong>Collection date:</strong>
+  <%= @sample.collection_date %>
+</p>
+
+<p>
+  <strong>Create date:</strong>
+  <%= @sample.create_date %>
+</p>
+
+<p>
+  <strong>Visit description:</strong>
+  <%= @sample.visit_description %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @sample.source %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @sample.notes %>
+</p>
+
+<p>
+  <strong>Tissue tumor flag:</strong>
+  <%= @sample.tissue_tumor_flag %>
+</p>
+
+<p>
+  <strong>Tissue normal flag:</strong>
+  <%= @sample.tissue_normal_flag %>
+</p>
+
+<p>
+  <strong>Tissue abnormal flag:</strong>
+  <%= @sample.tissue_abnormal_flag %>
+</p>
+
+<%= link_to 'Edit', edit_sample_path(@sample) %> |
+<%= link_to 'Back', samples_path %>

@@ -1,0 +1,17 @@
+study_name	:	string
+rlims_id	:	string
+family_id	:	string
+sample_type	:	string
+treatments	:	string
+preparation	:	string
+patient_initials	:	string
+full_name	:	string
+birth_date	:	date
+collection_date	:	datetime
+create_date	:	datetime
+visit_description	:	string
+source	:	string
+notes	:	text
+tissue_tumor_flag,	:	string
+tissue_normal_flag,	:	string
+tissue_abnormal_flag,	:	string

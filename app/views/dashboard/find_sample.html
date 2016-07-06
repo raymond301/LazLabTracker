@@ -1,0 +1,48 @@
+
+
+
+<fieldset>
+    <div class="row">
+        <div class="col-xs-2 col-md-1"></div>
+        <div class="col-xs-12 col-md-10">
+            <legend>Samples/Aliases
+                <%= form_tag(dashboard_find_sample_path, :class=>'form-horizontal pull-right') do %>
+                <div class="form-group" >
+                    <div class="col-md-3 pull-right">
+                        <%= submit_tag "Sample", :class=>'btn btn-sm btn-info'%>
+                    </div>
+                    <div class="col-md-7 input-sm pull-right">
+                        <%= text_field_tag 'query'%>
+                    </div>
+                </div>
+                <% end %>
+
+            </legend>
+
+            <% if @samps.empty? %>
+                   <h3 style="color: darkred"> NO SAMPLES FOUND! </h3>
+            <% end %>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th width="280px">Name</th>
+                    <th width="100px">RLIMS</th>
+                    <th>Type</th>
+                    <!--<th>Other Names</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <% @samps.each do |s| %>
+                <tr>
+                    <td><%= link_to s.top_name_with_source, :controller => 'samples', :action => 'show', :id => s.id %> </td>
+                    <td><%= link_to s.rlims_id, :controller => 'samples', :action => 'show', :id => s.id %> </td>
+                    <td><%= modText(s.allNames, @q) %></td>
+                </tr>
+                <% end %>
+
+                <tbody>
+            </table>
+        </div>
+    </div>
+    <fieldset>

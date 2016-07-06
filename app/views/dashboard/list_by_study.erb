@@ -1,0 +1,13 @@
+</br>
+<fieldset>
+    <div class="row">
+        <div class="col-xs-2 col-md-1"></div>
+        <div class="col-xs-12 col-md-10">
+
+            <strong>Study:</strong><%= params[:study_name] %>
+            <%= render :partial => 'layouts/sample_list', :locals => {:samples => @studySamples, :able=>false} %>
+
+        </div>
+    </div>
+<fieldset>
+
